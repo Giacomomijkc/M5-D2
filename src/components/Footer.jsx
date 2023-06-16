@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { FooterLinks } from '../data/FooterLink';
+import { FooterDatas } from '../data/FooterDatas';
 
 class Footer extends Component{
     constructor(props){
@@ -15,8 +16,16 @@ class Footer extends Component{
                 {FooterLinks.map((link) => {
                     return(
                         <Col className='col-md-4'>
-                        <a className="footer-title" key={link.id} href={link.href}>{link.title}</a>
-                        <p className="footer-paragraph">{link.description}</p>
+                        <a key={link.id} href={link.href}>{link.title}</a>
+                        <p>{link.description}</p>
+                        </Col>
+                    )
+                })}
+
+                {FooterDatas.map((data)=> {
+                    return(
+                        <Col className='col-md-2 mt-2'>
+                        <a style={{fontSize: 'smaller'}} key={data.id}>{data.title} {data.description}</a>
                         </Col>
                     )
                 })}

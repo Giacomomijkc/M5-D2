@@ -15,7 +15,7 @@ class PrimaryContent extends Component {
             <Container className='my-5'>
                 <Row>
                     <Col className='d-flex flex-wrap gap-3'>
-                        {historyBooks.map((historyBook) =>{
+                        {historyBooks.slice(0,16).map((historyBook) =>{
                             return (
                                 <LatestReleases
                                     key={historyBook.asin}
