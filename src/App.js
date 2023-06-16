@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {Component} from 'react';
+import NavigationBar from './components/NavigationBar';
+import Footer from './components/Footer';
+import Jumbotron from './components/Jumbotron';
+import PrimaryContent from './components/PrimaryContent';
+import LatestReleases from './components/LatestReleases';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render(){
+    return(
+    <>
+      <NavigationBar />
+      <Jumbotron />
+      <PrimaryContent>
+        <LatestReleases/>
+      </PrimaryContent>
+      <Footer />
+    </>
+    )
+  }
 }
 
 export default App;
